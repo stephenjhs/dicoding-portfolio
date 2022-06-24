@@ -1,0 +1,99 @@
+@use "color";
+@use "interaction";
+@use "breakpoint";
+
+@mixin text-logo {
+	font-weight: 600;
+	font-size: 20px;
+	color: color.$main;
+	@include interaction.link-transition;
+	@media screen and (min-width: breakpoint.$sm) {
+		font-size: 22px;
+	}
+}
+
+@mixin text-link {
+	font-weight: 600;
+	color: color.$main;
+	@include interaction.link-transition;
+}
+
+@mixin banner-title {
+	font-size: 38px;
+	line-height: 54px;
+	font-weight: 700;
+	color: color.$main;
+	@media screen and (min-width: breakpoint.$sm) {
+		font-size: 44px;
+		line-height: 58px;
+	}
+}
+
+@mixin banner-description {
+	font-size: 18px;
+	line-height: 32px;
+	color: color.$text;
+}
+
+@mixin section-title {
+	font-size: 26px;
+	line-height: 44px;
+	font-weight: 700;
+	color: color.$main;
+	@media screen and (min-width: breakpoint.$sm) {
+		font-size: 32px;
+		line-height: 50px;
+	}
+}
+
+@mixin section-description {
+	line-height: 30px;
+	color: color.$text;
+}
+
+@mixin title {
+	color: color.$main;
+}
+
+@mixin description {
+	color: color.$text;
+	line-height: 26px;
+}
+
+.text-logo {
+	@include text-logo;
+}
+
+.text-link {
+	@include text-link;
+}
+
+.banner-title {
+	@include banner-title;
+}
+
+.banner-description {
+	@include banner-description;
+}
+
+.section-title {
+	@include section-title;
+}
+
+.section-description {
+	@include section-description;
+}
+
+h3,
+h4,
+h5,
+h6 {
+	font-weight: 600;
+}
+
+br {
+	display: none;
+	@media screen and (min-width: breakpoint.$md) {
+		display: block;
+	}
+}

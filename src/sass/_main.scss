@@ -1,0 +1,15 @@
+@use "color";
+
+* {
+	outline: none;
+}
+
+html {
+	font-family: "Source Sans Pro", sans-serif;
+}
+
+body {
+	background-color: color.$white;
+	overflow-x: hidden;
+	position: relative;
+}

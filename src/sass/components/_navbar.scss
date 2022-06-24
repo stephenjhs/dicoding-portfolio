@@ -1,0 +1,83 @@
+@use "../color";
+@use "../typography";
+@use "../layout";
+@use "../interaction";
+@use "../breakpoint";
+
+header {
+	position: absolute;
+	z-index: 99;
+	top: 0;
+	width: 100%;
+	nav {
+		padding: 30px 0;
+		.container {
+			justify-content: space-between;
+			.canvas {
+				position: fixed;
+				top: 0;
+				left: -100%;
+				height: 100%;
+				display: flex;
+				transition: opacity 0.3s;
+				opacity: 0;
+				&.collapse {
+					right: 0;
+					opacity: 1;
+					left: 0;
+					background-color: color.$white;
+					flex-direction: column;
+					gap: 26px;
+					padding: 30px;
+				}
+				@media screen and (min-width: breakpoint.$md) {
+					position: static;
+					opacity: 1;
+					padding: 0 !important;
+				}
+				.close {
+					position: absolute;
+					right: 0;
+					margin: 0 30px;
+				}
+				.nav-menu {
+					list-style: none;
+					display: flex;
+					flex-direction: column;
+					gap: 26px;
+					@media screen and (min-width: breakpoint.$md) {
+						gap: 50px;
+						align-items: center;
+						margin-left: 50px;
+						flex-direction: row;
+					}
+					.nav-item {
+						.nav-link {
+							color: color.$text;
+							&.active {
+								font-weight: 600;
+								color: color.$main;
+								@include interaction.link-transition;
+							}
+							&:focus,
+							&:active,
+							&:hover {
+								color: rgba(color.$text, 0.4);
+							}
+						}
+					}
+				}
+			}
+			.toggle {
+				cursor: pointer;
+				display: flex;
+				@media screen and (min-width: breakpoint.$md) {
+					display: none;
+				}
+			}
+		}
+		@media screen and (min-width: breakpoint.$md) {
+			padding: 30px 0;
+		}
+	}
+}

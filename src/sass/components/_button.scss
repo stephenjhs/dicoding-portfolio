@@ -1,0 +1,50 @@
+@use "../color";
+@use "../interaction";
+@use "../breakpoint";
+.btn {
+	padding: 12px 0;
+	border-radius: 5px;
+	text-align: center;
+	display: block;
+	width: 100%;
+	font-weight: 600;
+	@media screen and (min-width: breakpoint.$sm) {
+		padding: 12px 32px;
+		width: auto;
+		display: inline-block;
+	}
+	&.main-btn {
+		color: color.$white;
+		background-color: color.$main;
+		&:focus,
+		&:active,
+		&:hover {
+			background-color: darken(color.$main, 7);
+			outline: 2px solid color.$main;
+			outline-offset: 1px;
+		}
+	}
+	&.light-btn {
+		color: color.$main;
+		background-color: darken(color.$main-light, 8);
+		&:focus,
+		&:active,
+		&:hover {
+			background-color: darken(color.$main-light, 20);
+		}
+	}
+	&.transparent-btn {
+		color: color.$main;
+		background-color: transparent;
+		@include interaction.link-transition;
+	}
+}
+
+.btns {
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	@media screen and (min-width: breakpoint.$sm) {
+		flex-direction: row;
+	}
+}

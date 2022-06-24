@@ -1,0 +1,21 @@
+@use "color";
+
+@mixin transition {
+	transition: all 0.1s;
+}
+
+@mixin link-transition {
+	&:focus,
+	&:active,
+	&:hover {
+		color: lighten(color.$main, 30);
+	}
+}
+
+.nav-link {
+	@include transition;
+}
+
+.btn {
+	@include transition;
+}

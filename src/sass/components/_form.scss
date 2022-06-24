@@ -1,0 +1,18 @@
+@use "../color";
+
+input,
+textarea {
+	padding: 12px 18px;
+	color: color.$main;
+	cursor: text;
+	background-color: rgba(color.$gray, 0.12);
+}
+
+textarea {
+	resize: vertical;
+	min-height: 200px;
+}
+
+label {
+	color: color.$main;
+}

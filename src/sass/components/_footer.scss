@@ -1,0 +1,17 @@
+@use "../color";
+@use "../typography";
+@use "../breakpoint";
+
+footer {
+	padding: 20px 30px;
+	@media screen and (min-width: breakpoint.$sm) {
+		padding: 50px;
+	}
+	.container {
+		justify-content: center;
+		text-align: center;
+		.footer-text {
+			@include typography.description;
+		}
+	}
+}
