@@ -14,9 +14,6 @@ const navMenuIssue = () => {
 }
 
 const malingPangsitAudio = () => {
-    // const audio = new Audio("src/audios/maling-pangsit.mp3")
-    // audio.play()
-
     const audioCtx = new (window.AudioContext || window.webkitAudioContext)()
     const source = audioCtx.createBufferSource()
     const xhr = new XMLHttpRequest()
