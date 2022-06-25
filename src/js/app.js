@@ -9,33 +9,17 @@ const toggleEvent = () => {
     })
 }
 
-const navMenuIssue = () => {
-    window.addEventListener("scroll", () => {})
-}
-
 const malingPangsitAudio = () => {
-    const audioCtx = new (window.AudioContext || window.webkitAudioContext)()
-    const source = audioCtx.createBufferSource()
-    const xhr = new XMLHttpRequest()
-    xhr.open("GET", "src/audios/maling-pangsit.mp3")
-    xhr.responseType = "arraybuffer"
-    xhr.addEventListener("load", function (r) {
-        let playsound = (audioBuffer) => {
-            let source = audioCtx.createBufferSource()
-            source.buffer = audioBuffer
-            source.connect(audioCtx.destination)
-            source.loop = false
-            source.start()
+    const audio = new Audio("src/audios/maling-pangsit.mp3")
+    window.addEventListener("scroll", () => {
+        if (window.scrollY > 9) {
+            audio.play()
         }
-
-        audioCtx.decodeAudioData(xhr.response).then(playsound)
     })
-    xhr.send()
 }
 
 const init = () => {
     toggleEvent()
-    navMenuIssue()
     malingPangsitAudio()
     AOS.init({
         offset: 270,
@@ -43,4 +27,4 @@ const init = () => {
     })
 }
 
-window.addEventListener("DOMContentLoaded", init())
+window.addEventListener("load", init())
