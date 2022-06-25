@@ -570,8 +570,6 @@ header nav .container .toggle {
 }
 .btn.main-btn:focus, .btn.main-btn:active, .btn.main-btn:hover {
   background-color: #161122;
-  outline: 2px solid #251d3a;
-  outline-offset: 1px;
 }
 .btn.light-btn {
   color: #251d3a;

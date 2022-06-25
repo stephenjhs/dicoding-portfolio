@@ -20,8 +20,6 @@
 		&:active,
 		&:hover {
 			background-color: darken(color.$main, 7);
-			outline: 2px solid color.$main;
-			outline-offset: 1px;
 		}
 	}
 	&.light-btn {
