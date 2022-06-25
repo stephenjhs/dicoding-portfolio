@@ -12,7 +12,7 @@ const toggleEvent = () => {
 const malingPangsitAudio = () => {
     const audio = new Audio("src/audios/maling-pangsit.mp3")
     window.addEventListener("scroll", () => {
-        if (window.scrollY > 9) {
+        if (window.scrollY > 1) {
             audio.play()
         }
     })
