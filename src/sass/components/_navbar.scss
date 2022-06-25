@@ -26,8 +26,6 @@ header {
 					opacity: 1;
 					left: 0;
 					background-color: color.$white;
-					flex-direction: column;
-					gap: 26px;
 					padding: 30px;
 				}
 				@media screen and (min-width: breakpoint.$md) {
@@ -44,7 +42,8 @@ header {
 					list-style: none;
 					display: flex;
 					flex-direction: column;
-					gap: 26px;
+					gap: 30px;
+					margin-top: 2px;
 					@media screen and (min-width: breakpoint.$md) {
 						gap: 50px;
 						align-items: center;

@@ -492,8 +492,6 @@ header nav .container .canvas.collapse {
   opacity: 1;
   left: 0;
   background-color: #fff;
-  flex-direction: column;
-  gap: 26px;
   padding: 30px;
 }
 @media screen and (min-width: 768px) {
@@ -512,7 +510,8 @@ header nav .container .canvas .nav-menu {
   list-style: none;
   display: flex;
   flex-direction: column;
-  gap: 26px;
+  gap: 30px;
+  margin-top: 2px;
 }
 @media screen and (min-width: 768px) {
   header nav .container .canvas .nav-menu {
